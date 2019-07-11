@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <a routerLink="/" mat-button>MeanApp</a>
+  <span class="spacer"></span>
+  <ul>
+    <li *ngIf="userIsAuthenticated">
+      <a routerLink="/create" mat-button routerLinkActive="mat-accent">Create</a>
+    </li>
+    <li *ngIf="!userIsAuthenticated">
+      <a routerLink="/auth/login" mat-button routerLinkActive="mat-accent">Login</a>
+    </li>
+    <li *ngIf="!userIsAuthenticated">
+      <a routerLink="/auth/signup" mat-button routerLinkActive="mat-accent">Signup</a>
+    </li>
+    <li *ngIf="userIsAuthenticated">
+      <button (click)="onLogout()" mat-button routerLinkActive="mat-accent">Logout</button>
+    </li>
+  </ul>
+</mat-toolbar>
